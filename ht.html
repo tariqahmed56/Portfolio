@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Menu with Hamburger</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 1rem;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+/* Media Query for small screens */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Show the menu when hamburger is clicked */
+    .menu.show {
+        display: block;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 70px; /* Adjust this value based on your design */
+        right: 10px; /* Adjust this value based on your design */
+        padding: 1rem;
+    }
+}
+
+</style>
+<body>
+    <nav class="navbar">
+      <div class="logo">Tariq Ahmed</div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    <!-- Other page content goes here -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+    </script>
+</body>
+</html>
